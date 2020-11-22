@@ -2,12 +2,12 @@ html {
     font-size:16px;
 }
 body {
+	align-items: center;
+	display: flex;
 	font-size:1em;
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-	display: flex;
 	justify-content: center;
-	align-items: center;
-	flex-flow: row wrap;
+	
 }
 
 .container {
@@ -43,28 +43,33 @@ h4 {
 p {
 	font-size: 0.875em;
 	line-height: 1.3125em;
-    padding: 0 1.875em;
 }
 
 /*The widths are in a percentage!*/
 header {
-	margin: 0 auto;
+	border-bottom: 3px solid #77a466;
+	width: 100%;
+	text-align: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
+
 }
 
 header h1 {
 	margin: 0;
-	padding: 38px 0;
+	padding: 38px 20px 20px 20px;
+	border-bottom: 3px solid #77a466;
+	width: 100%;
 }
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
-	padding: 2.375em 0;
+	padding: 20px 0;
+	width: 100%;
 }
 header nav ul {
 	margin: 0;
@@ -74,8 +79,8 @@ header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: 0.875em;
-	padding: 0 0.625em;
-	display: inline;
+	padding: 10px 0;
+	list-style: none;
 }
 header nav ul li a{
 	text-decoration: none;
@@ -85,24 +90,14 @@ header nav ul li a{
 /*The widths are in a percentage!*/
 .top-section,
 .bottom-section {
-	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-flow: column wrap;
 }
-
-.main-image {
-	height: auto;
-}
 .main-image img {
 	width: 100%;
 	border-bottom: .1875em solid #77a466;
-	border-top: .1875em solid #77a466;
-}
-
-.main-title {
-	height: auto;
 }
 .main-title h3 {
 	text-align: left;
@@ -119,24 +114,8 @@ header nav ul li a{
 .section-two,
 .section-three {
 	width: 100%;
-	height: auto;
 	border-top: 1px solid #eee;
 }
-
-.section-one h4 {
-	padding: 10px 0;
-}
-
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
-
-.section-two h4,
-.section-three h4 {
-	padding: 10px 30px;
-}
-
 .menu {
 	list-style: none;
 	padding: 0;
@@ -160,7 +139,7 @@ header nav ul li a{
 /*The widths are in a percentage!*/
 footer {
 	border-top: 3px solid #eee;
-	margin: 0 auto;
+	width: 100%;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -172,4 +151,57 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
+}
+@media all and (min-width:768px) {
+	/* Tablet styles here */
+.section-one,
+.section-two,
+.section-three {
+	flex-basis: 30%;
+	border-top: none;
+
+}
+.section-two {
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 0 20px;
+}
+.bottom-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-flow: row wrap;
+	border-top: 1px solid #eee; 
+}
+header nav ul li {
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.875em;
+	padding: 10px 20px 0px 20px;
+	display: inline;
+}
+@media all and (min-width:1200px) {
+	/* Desktop styles here */
+	header {
+		justify-content: space-between;
+		text-align: left;
+		flex-flow: row;
+	
+	}
+		header h1 {
+		
+			padding: 0;
+			border-bottom: none;
+			width: 40%;
+		}
+		header nav {
+			width: 60%;
+		}
+		header nav ul li {
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 0.875em;
+			list-style: none;
+		}
+}
 }
